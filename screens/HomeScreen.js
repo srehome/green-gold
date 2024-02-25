@@ -1,8 +1,10 @@
 import React from "react";
 import { View, Text, Button } from "react-native";
+import { SafeAreaView } from 'react-native-safe-area-context';
+
 export default function HomeScreen({navigation}) {
   return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+    <SafeAreaView style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
       <Text>Home Screen</Text>
       <Button title="Rewards"
             onPress={() => {
@@ -20,6 +22,6 @@ export default function HomeScreen({navigation}) {
             onPress={() => {
                     navigation.navigate('Login')
                   }}></Button>
-    </View>
+    </SafeAreaView>
   );
 }
