@@ -19,16 +19,17 @@ export default function SignUpScreen({navigation}) {
           return
       }
       firebase
-      .auth()
-      .createUserWithEmailAndPassword(email, password)
-      .then((response) => {
-          const uid = response.user.uid
-          const data = {
-              id: uid,
-              email,
-              lastName,
-          };
-    });
+            .auth()
+            .createUserWithEmailAndPassword(email, password)
+            .then((response) => {
+                const uid = response.user.uid
+                const data = {
+                    id: uid,
+                    email,
+                    lastName,
+                }
+                navigation.navigate('Login')
+              });
   }
 
     const styles = StyleSheet.create({
@@ -71,15 +72,15 @@ export default function SignUpScreen({navigation}) {
       keyboardShouldPersistTaps="always">
 
       <TextInput style={styles.input} placeholder='First Name' placeholderTextColor='black'
-                  autoCapitalize='None' value={firstName} onChangeText={(value) => setFirstName(value)}/>
+                   value={firstName} onChangeText={(value) => setFirstName(value)}/>
       <TextInput style={styles.input} placeholder='Last Name' placeholderTextColor='black'
-                  autoCapitalize='None' value={lastName} onChangeText={(value) => setLastName(value)}/>
+                 value={lastName} onChangeText={(value) => setLastName(value)}/>
       <TextInput style={styles.input} placeholder='Email ' placeholderTextColor='black'
-                  autoCapitalize='None' value={email} onChangeText={(value) => setEmail (value)}/>
+                   value={email} onChangeText={(value) => setEmail (value)}/>
       <TextInput style={styles.input} placeholder='Password ' placeholderTextColor='black'
-                  autoCapitalize='None' secureTextEntry value={password} onChangeText={(value) => setPassword (value)}/>
+                  secureTextEntry value={password} onChangeText={(value) => setPassword (value)}/>
        <TextInput style={styles.input} placeholder='Re-enter Password ' placeholderTextColor='black' 
-                  autoCapitalize='None' secureTextEntry value={confirmPassword} onChangeText={(value) => setConfirmPassword (value)}/>
+                   secureTextEntry value={confirmPassword} onChangeText={(value) => setConfirmPassword (value)}/>
      
      <TouchableOpacity
                     style={styles.btn}
