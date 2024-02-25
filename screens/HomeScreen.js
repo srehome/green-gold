@@ -20,15 +20,6 @@ export default function HomeScreen({route, navigation}) {
 
         <TouchableOpacity
           onPress={() => {
-            navigation.navigate('Login')
-          }}>
-            <View style={styles.button}>
-              <Text style={styles.buttonText}>Login</Text>
-            </View>
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          onPress={() => {
             navigation.navigate('SchedulePickUp')
           }}>
             <View style={styles.button}>
