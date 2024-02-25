@@ -18,8 +18,8 @@ export default function LoginScreen({navigation}) {
         colors={['rgba(0,100,0,0.8)', '#ffe993']}
         style={styles.linearGradient}>
      
-      <Text style ={styles.title} > Green Gold </Text>
-
+      <Text style ={styles.title} >{'\u2740'} Green Gold </Text>
+      
       <Text style ={styles.inputLabel} > Email Address </Text>
 
       <TextInput style ={styles.inputControl}  placeholder ="johndoe@example.com" 
@@ -67,13 +67,13 @@ const styles = StyleSheet.create({
     borderRadius: 5
   },
  title:{
-    fontSize : 40,
-    fontWeight : '700',
+    fontSize : 45,
+    fontWeight : 'bold',
     fontFamily: 'serif',
     textAlign: 'center',
-    color : '#fff',
-    shadowColor : 'blue',
-    elevation : 7,
+    color: '#efed02',
+    textShadowColor : '#ffe993',
+    textShadowRadius: 15,
     marginTop : '25%',
     marginBottom: '20%'
   },
