@@ -10,6 +10,7 @@ import HomeScreen from './screens/HomeScreen';
 import RewardsScreen from './screens/RewardsScreen';
 import SettingsScreen from './screens/SettingsScreen';
 import LoginScreen from './screens/LoginScreen';
+import SchedulePickUpScreen from './screens/SchedulePickUpScreen';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -37,6 +38,11 @@ function MyStack() {
             name="Login"
             component={LoginScreen}
         />
+        <Stack.Screen
+            name="SchedulePickUp"
+            component={SchedulePickUpScreen}
+        />
+        
     </Stack.Navigator>
 );
 }

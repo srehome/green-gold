@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text, Button } from "react-native";
-export default function HomeScreen({navigation}) {
+export default function HomeScreen({route, navigation}) {
+
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
       <Text>Home Screen</Text>
@@ -19,6 +20,10 @@ export default function HomeScreen({navigation}) {
       <Button title="Login"
             onPress={() => {
                     navigation.navigate('Login')
+                  }}></Button>
+      <Button title="SchedulePickUp"
+            onPress={() => {
+                    navigation.navigate('SchedulePickUp')
                   }}></Button>
     </View>
   );
