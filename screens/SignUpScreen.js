@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { Image, Text, TextInput, TouchableOpacity, View,StyleSheet,Button } from 'react-native'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
-import { firebase } from '../firebase/config'
-import auth from '@react-native-firebase/auth';
+
+
 
 export default function SignUpScreen({navigation}) {
 
