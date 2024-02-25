@@ -51,7 +51,7 @@ function ScreensWithTabs() {
           tabBarActiveBackgroundColor: '#da9100',
           tabBarInactiveBackgroundColor: '#eccf42',
         })}>
-            <Tab.Screen name="Home" component={HomeScreen} options={{headerShown: false}}/>
+            <Tab.Screen name="Home" component={HomeScreen} options={{headerShown: false}} initialParams={{ScheduleDate: null}}/>
             <Tab.Screen name="Rewards" component={RewardsScreen} options={{headerShown: false}}/>
             <Tab.Screen name="Settings" component={SettingsScreen} options={{headerShown: false}}/>
             <Tab.Screen name="SignUp" component={SignUpScreen} options={{headerShown: false, tabBarButton: () => null}}/>

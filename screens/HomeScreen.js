@@ -5,6 +5,10 @@ import { LinearGradient } from 'expo-linear-gradient';
 
 export default function HomeScreen({route, navigation}) {
 
+  if(route.params.ScheduleDate != null){
+    const date = route.params.ScheduleDate.toString();
+  }
+
   return (
     <SafeAreaView style={styles.container}>
       <LinearGradient
@@ -54,8 +58,6 @@ const styles = StyleSheet.create({
     fontWeight : '700',
     textAlign: 'center',
     color : '#fff',
-    shadowColor : 'blue',
-    elevation : 7,
     marginTop : '10%',
     marginBottom: '20%'
   },
