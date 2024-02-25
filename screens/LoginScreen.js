@@ -65,13 +65,12 @@ const styles = StyleSheet.create({
     borderRadius: 5
   },
  title:{
-    width : 200,
     fontSize : 36,
     fontWeight : '700',
+    textAlign: 'center',
     color : '#fff',
     shadowColor : 'blue',
     elevation : 7,
-    marginLeft : 10,
     marginTop : '25%',
     marginBottom: '20%'
   },
