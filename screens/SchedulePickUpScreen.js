@@ -93,6 +93,7 @@ const styles = StyleSheet.create({
   title:{
     fontSize : 36,
     fontWeight : '700',
+    fontFamily: 'serif',
     textAlign: 'center',
     color : '#fff',
     marginTop : '10%',
@@ -111,6 +112,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     fontSize: 18,
+    fontFamily: 'serif',
     lineHeight: 26,
     fontWeight: '600',
     color: 'black',
@@ -118,6 +120,7 @@ const styles = StyleSheet.create({
   dateTimeText: {
     fontSize : 24,
     fontWeight : 'bold',
+    fontFamily: 'serif',
     textAlign: 'center',
     color : '#fff',
   },

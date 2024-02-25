@@ -34,6 +34,7 @@ const styles = StyleSheet.create({
  title:{
     fontSize : 36,
     fontWeight : '700',
+    fontFamily: 'serif',
     textAlign: 'center',
     color : '#fff',
     shadowColor : 'blue',
@@ -44,6 +45,7 @@ const styles = StyleSheet.create({
   profileDetails:{
     fontSize : 24,
     fontWeight : 'bold',
+    fontFamily: 'serif',
     textAlign: 'center',
     textAlignVertical: 'center',
     color : '#0f5132',

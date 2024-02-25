@@ -13,9 +13,7 @@ export default function RewardsScreen() {
           <View>
             <Text style={styles.title}>{'\u26c1'}{'\u267B'} Rewards {'\u267B'}{'\u26c1'}</Text>
           </View>
-
-
-    </LinearGradient>
+      </LinearGradient>
     </SafeAreaView>
   );
 }

@@ -67,8 +67,9 @@ const styles = StyleSheet.create({
     borderRadius: 5
   },
  title:{
-    fontSize : 36,
+    fontSize : 40,
     fontWeight : '700',
+    fontFamily: 'serif',
     textAlign: 'center',
     color : '#fff',
     shadowColor : 'blue',
@@ -78,6 +79,7 @@ const styles = StyleSheet.create({
   },
   inputLabel:{
     fontSize : 21,
+    fontFamily: 'serif',
     fontWeight : '600',
     alignItems: 'flex-end',
   },
@@ -89,6 +91,7 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     fontSize: 15,
     fontWeight: '900',
+    fontFamily: 'serif',
     color: '#222',
     borderWidth: 1,
     borderColor: '#C9D3DB',
@@ -108,6 +111,7 @@ const styles = StyleSheet.create({
   },
   btnText: {
     fontSize: 18,
+    fontFamily: 'serif',
     lineHeight: 26,
     fontWeight: '600',
     color: 'black',
