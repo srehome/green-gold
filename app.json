@@ -25,6 +25,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "a2996c7d-2296-4c29-938b-def1a9da5978"
+      }
+    },
+    "owner": "fullyhacksteam2024"
   }
 }
