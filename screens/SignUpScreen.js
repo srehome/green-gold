@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
-import { Image, Text, TextInput, TouchableOpacity, View,StyleSheet,Button } from 'react-native'
+import { Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import firebase from "../firebase/config"
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { LinearGradient } from 'expo-linear-gradient';
 
 
 export default function SignUpScreen({navigation}) {
@@ -28,48 +30,23 @@ export default function SignUpScreen({navigation}) {
                     email,
                     lastName,
                 }
-                navigation.navigate('Login')
+                navigation.navigate('Login', {
+                  UserData: data,
+                })
               });
   }
 
-    const styles = StyleSheet.create({
-      container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignContent : 'center'
-      },
-      input:{
-        borderRadius : 4,
-        height: 40,
-        marginTop : 25,
-        marginBottom : 10,
-        marginLeft : 20,
-        marginRight :20,
-        backgroundColor : 'white',
 
-      },
-      btn: {
-        backgroundColor: '#788eec',
-        marginLeft: 30,
-        marginRight: 30,
-        marginTop: 20,
-        height: 48,
-        borderRadius: 5,
-        alignItems: "center",
-        justifyContent: 'center'
-    },
-    buttonTitle: {
-        color: 'black',
-        fontSize: 16,
-        fontWeight: "900"
-    },
-    });
 
   return (
-    <View style ={styles.container}>
-
+    <SafeAreaView style ={styles.container}>
+      <LinearGradient
+        colors={['rgba(0,100,0,0.8)', '#ffe993']}
+        style={styles.linearGradient}>
       <KeyboardAwareScrollView style={{flex :1, width:'100%'}}
       keyboardShouldPersistTaps="always">
+
+      <Text style={styles.title}>Sign Up</Text>
 
       <TextInput style={styles.input} placeholder='First Name' placeholderTextColor='black'
                    value={firstName} onChangeText={(value) => setFirstName(value)}/>
@@ -83,13 +60,63 @@ export default function SignUpScreen({navigation}) {
                    secureTextEntry value={confirmPassword} onChangeText={(value) => setConfirmPassword (value)}/>
      
      <TouchableOpacity
-                    style={styles.btn}
+                    style={styles.button}
                     onPress={() => onRegisterPress()}>
-                    <Text style={styles.buttonTitle}>Register</Text>
+                    <Text style={styles.buttonText}>Register</Text>
                 </TouchableOpacity>
       </KeyboardAwareScrollView>
-     </View>
-
-    
+      </LinearGradient>
+     </SafeAreaView> 
   );
 }
+
+const styles = StyleSheet.create({
+      container: {
+        flex: 1,
+        justifyContent: 'center',
+      },
+      linearGradient: {
+        flex: 1,
+        paddingHorizontal: '3%',
+        borderRadius: 5
+      },
+      title:{
+        fontSize : 40,
+        fontWeight : 'bold',
+        fontFamily: 'serif',
+        textAlign: 'center',
+        color : '#fff',
+        marginTop : '15%',
+        marginBottom: '15%'
+      },
+      input:{
+        fontFamily: 'serif',
+        borderRadius : 4,
+        height: 40,
+        paddingHorizontal: 4,
+        marginTop: '5%',
+        marginBottom: '5%',
+        marginLeft: '6%',
+        marginRight: '6%',
+        backgroundColor: 'white',
+      },
+      button: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        borderRadius: 30,
+        paddingVertical: 10,
+        paddingHorizontal: 20,
+        borderWidth: 2,
+        backgroundColor: 'white',
+        marginTop : '5%',
+        marginHorizontal: '10%',
+        borderColor: '#0f5132',
+      },
+      buttonText: {
+        fontSize: 18,
+        fontFamily: 'serif',
+        lineHeight: 26,
+        fontWeight: '600',
+        color: 'black',
+      },
+});
