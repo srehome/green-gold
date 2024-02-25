@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { StyleSheet, Text, View,TextInput,TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { LinearGradient } from 'expo-linear-gradient';
+import firebase from "../firebase/config"
 
 export default function LoginScreen({navigation}) {
   const [emailAddress, setEmailAddress ] = useState("");
@@ -18,13 +19,13 @@ export default function LoginScreen({navigation}) {
         colors={['rgba(0,100,0,0.8)', '#ffe993']}
         style={styles.linearGradient}>
      
-      <Text style ={styles.title} > Green Gold </Text>
-
+      <Text style ={styles.title} >{'\u2740'} Green Gold </Text>
+      
       <Text style ={styles.inputLabel} > Email Address </Text>
 
       <TextInput style ={styles.inputControl}  placeholder ="johndoe@example.com" 
       placeholderTextColor= 'grey'
-      onChangeText={(value) =>setEmailAddress(value)} />
+      onChangeText={(emailAddress) =>setEmailAddress(emailAddress)} />
 
       <Text style ={styles.inputLabel}> Password </Text>
       <TextInput style ={styles.inputControl}  
@@ -35,7 +36,15 @@ export default function LoginScreen({navigation}) {
 
     <TouchableOpacity
     onPress={() => {
-      navigation.navigate('ScreensWithTabs', {screen: 'Home'})
+      firebase.auth().signInWithEmailAndPassword(emailAddress,password)
+      .then((response) => {
+        const user = response.user;
+        navigation.navigate('ScreensWithTabs', {screen: 'Home'})
+      })
+      .catch(error => {
+        alert(error)
+    });
+      //navigation.navigate('ScreensWithTabs', {screen: 'Home'})
     }}>
     <View style={styles.btn}>
       <Text style={styles.btnText}>Log In</Text>
@@ -67,13 +76,13 @@ const styles = StyleSheet.create({
     borderRadius: 5
   },
  title:{
-    fontSize : 40,
-    fontWeight : '700',
+    fontSize : 45,
+    fontWeight : 'bold',
     fontFamily: 'serif',
     textAlign: 'center',
-    color : '#fff',
-    shadowColor : 'blue',
-    elevation : 7,
+    color: '#efed02',
+    textShadowColor : '#ffe993',
+    textShadowRadius: 15,
     marginTop : '25%',
     marginBottom: '20%'
   },
