@@ -39,7 +39,6 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     color: '#efed02',
     textShadowColor : '#ffe993',
-    textShadowOpacity: .8,
     textShadowRadius: 15,
     marginTop : '10%',
     marginBottom: '20%'
