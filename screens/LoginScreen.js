@@ -1,9 +1,9 @@
-import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
-import { StyleSheet, Text, View,Image,TextInput,TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View,TextInput,TouchableOpacity } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { LinearGradient } from 'expo-linear-gradient';
 
-export default function App({navigation}) {
+export default function LoginScreen({navigation}) {
   const [emailAddress, setEmailAddress ] = useState("");
   const [password,setPassword] = useState("")
 
@@ -11,12 +11,12 @@ export default function App({navigation}) {
     navigation.navigate('SignUpScreen')
   }
   return (
-    <View style={styles.container}>
+
+    <SafeAreaView style={styles.container}>
       <LinearGradient
         // Background Linear Gradient
-        colors={['rgba(0,0,0,0.8)', 'transparent']}
-        style={styles.background}
-      />
+        colors={['rgba(0,100,0,0.8)', '#ffe993']}
+        style={styles.linearGradient}>
      
       <Text style ={styles.title} > Green Gold </Text>
 
@@ -35,62 +35,57 @@ export default function App({navigation}) {
 
     <TouchableOpacity
     onPress={() => {
-      // handle onPress
+      navigation.navigate('ScreensWithTabs', {screen: 'Home'})
     }}>
     <View style={styles.btn}>
-      <Text style={styles.btnText}>Login</Text>
-    </View>
-    <View style={styles.btn}>
-      <Text style={styles.btnText} onPress={register}>Register</Text>
+      <Text style={styles.btnText}>Log In</Text>
     </View>
     </TouchableOpacity>
-    </View>
 
-    
+    <TouchableOpacity
+    onPress={() => {
+      navigation.navigate('ScreensWithTabs', {screen: 'SignUp'})
+    }}>
+    <View style={styles.btn}>
+      <Text style={styles.btnText}>Sign Up</Text>
+    </View>
+    </TouchableOpacity>
+
+    </LinearGradient>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#800080',
-    alignItems: 'center',
-  },
-  background: {
-    position: 'absolute',
-    left: 0,
-    right: 0,
-    top: 0,
-    height: 300,
-  },
-  header: {
-    alignItems: 'center',
     justifyContent: 'center',
-    marginVertical: 36,
+  },
+  linearGradient: {
+    flex: 1,
+    paddingHorizontal: '3%',
+    borderRadius: 5
   },
  title:{
-    width : 200 ,
     fontSize : 36,
     fontWeight : '700',
+    textAlign: 'center',
     color : '#fff',
     shadowColor : 'blue',
     elevation : 7,
-    marginLeft :10,
-    marginTop : 100
+    marginTop : '25%',
+    marginBottom: '20%'
   },
   inputLabel:{
     fontSize : 21,
-    marginTop : 60,
-    marginRight : 260,
     fontWeight : '600',
     alignItems: 'flex-end',
-    marginBottom : 8
   },
   inputControl: {
     height: 50,
     width :"100%",
     backgroundColor: '#fff',
-    paddingHorizontal: 16,
+    paddingHorizontal: '3%',
     borderRadius: 12,
     fontSize: 15,
     fontWeight: '900',
@@ -98,18 +93,18 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#C9D3DB',
     borderStyle: 'solid',
+    marginBottom: '20%'
   },
    btn: {
     flexDirection: 'row',
-    alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 30,
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderWidth: 1,
     backgroundColor: 'white',
-    marginTop : 10,
-    borderColor: '#075eec',
+    marginTop : '5%',
+    borderColor: '#0f5132',
   },
   btnText: {
     fontSize: 18,
