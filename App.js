@@ -19,6 +19,7 @@ function MyStack() {
   return (
     <Stack.Navigator>
         <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }}/>
+        <Stack.Screen name="SignUp" component={SignUpScreen} options={{headerShown: false}}/>
         <Stack.Screen
             name="ScreensWithTabs"
             component={ScreensWithTabs}
@@ -54,7 +55,6 @@ function ScreensWithTabs() {
             <Tab.Screen name="Home" component={HomeScreen} options={{headerShown: false}} initialParams={{ScheduleDate: null}}/>
             <Tab.Screen name="Rewards" component={RewardsScreen} options={{headerShown: false}}/>
             <Tab.Screen name="Settings" component={SettingsScreen} options={{headerShown: false}}/>
-            <Tab.Screen name="SignUp" component={SignUpScreen} options={{headerShown: false, tabBarButton: () => null}}/>
             <Tab.Screen name="SchedulePickUp" component={SchedulePickUpScreen} options={{ headerShown: false, tabBarButton: () => null}}/>
         </Tab.Navigator>
 );

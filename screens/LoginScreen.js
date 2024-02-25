@@ -7,10 +7,7 @@ import firebase from "../firebase/config"
 export default function LoginScreen({navigation}) {
   const [emailAddress, setEmailAddress ] = useState("");
   const [password,setPassword] = useState("")
-
-  const register = () => {
-    navigation.navigate('SignUpScreen')
-  }
+  
   return (
 
     <SafeAreaView style={styles.container}>
@@ -53,7 +50,7 @@ export default function LoginScreen({navigation}) {
 
     <TouchableOpacity
     onPress={() => {
-      navigation.navigate('ScreensWithTabs', {screen: 'SignUp'})
+      navigation.navigate('SignUp')
     }}>
     <View style={styles.btn}>
       <Text style={styles.btnText}>Sign Up</Text>
