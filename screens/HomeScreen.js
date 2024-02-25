@@ -1,9 +1,10 @@
 import React from "react";
-import { StyleSheet, View, Text, Button } from "react-native";
+import { View, Text, Button,StyleSheet } from "react-native";
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { LinearGradient } from 'expo-linear-gradient';
 
-export default function HomeScreen({navigation}) {
+export default function HomeScreen({route, navigation}) {
+
   return (
     <SafeAreaView style={styles.container}>
       <LinearGradient
@@ -28,7 +29,11 @@ export default function HomeScreen({navigation}) {
             onPress={() => {
                     navigation.navigate('Login')
                   }}></Button>
-
+      <Button title="SchedulePickUp"
+            onPress={() => {
+                    navigation.navigate('SchedulePickUp')
+                  }}></Button>
+   
       </LinearGradient>
     </SafeAreaView>
   );

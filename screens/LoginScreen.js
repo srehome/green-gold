@@ -7,6 +7,9 @@ export default function LoginScreen({navigation}) {
   const [emailAddress, setEmailAddress ] = useState("");
   const [password,setPassword] = useState("")
 
+  const register = () => {
+    navigation.navigate('SignUpScreen')
+  }
   return (
 
     <SafeAreaView style={styles.container}>
@@ -21,7 +24,6 @@ export default function LoginScreen({navigation}) {
 
       <TextInput style ={styles.inputControl}  placeholder ="johndoe@example.com" 
       placeholderTextColor= 'grey'
-      keyboardType="email-address"
       onChangeText={(value) =>setEmailAddress(value)} />
 
       <Text style ={styles.inputLabel}> Password </Text>
