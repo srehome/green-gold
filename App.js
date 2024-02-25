@@ -11,6 +11,7 @@ import RewardsScreen from './screens/RewardsScreen';
 import SettingsScreen from './screens/SettingsScreen';
 import LoginScreen from './screens/LoginScreen';
 import SchedulePickUpScreen from './screens/SchedulePickUpScreen';
+import SelectAddressScreen from './screens/SelectAddressScreen';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -56,6 +57,7 @@ function ScreensWithTabs() {
             <Tab.Screen name="Settings" component={SettingsScreen} options={{headerShown: false}}/>
             <Tab.Screen name="SignUp" component={SignUpScreen} options={{headerShown: false, tabBarButton: () => null}}/>
             <Tab.Screen name="SchedulePickUp" component={SchedulePickUpScreen} options={{ headerShown: false, tabBarButton: () => null}}/>
+            <Tab.Screen name="ScheduleAddress" component={SelectAddressScreen} options={{ headerShown: false, tabBarButton: () => null}}/>
         </Tab.Navigator>
 );
 }

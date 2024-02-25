@@ -71,9 +71,18 @@ import { LinearGradient } from 'expo-linear-gradient';
               ScheduleDate: date.toLocaleString(),
             })
           }}>
+            
             <View style={styles.button}>
               <Text style={styles.buttonText}>Confirm</Text>
             </View>
+            </TouchableOpacity>
+            <TouchableOpacity
+                onPress={() => {
+                  navigation.navigate('ScheduleAddress')
+                }}>
+              <View style={styles.button}>
+                <Text style={styles.buttonText}>Select Address</Text>
+              </View>
         </TouchableOpacity>
       </LinearGradient>
     </SafeAreaView>
