@@ -24,11 +24,6 @@ function MyStack() {
             component={ScreensWithTabs}
             options={{ headerShown: false }}
         />
-        <Stack.Screen
-            name="SchedulePickUp"
-            component={SchedulePickUpScreen}
-        />
-        
     </Stack.Navigator>
 );
 }
@@ -60,6 +55,7 @@ function ScreensWithTabs() {
             <Tab.Screen name="Rewards" component={RewardsScreen} options={{headerShown: false}}/>
             <Tab.Screen name="Settings" component={SettingsScreen} options={{headerShown: false}}/>
             <Tab.Screen name="SignUp" component={SignUpScreen} options={{headerShown: false, tabBarButton: () => null}}/>
+            <Tab.Screen name="SchedulePickUp" component={SchedulePickUpScreen} options={{ headerShown: false, tabBarButton: () => null}}/>
         </Tab.Navigator>
 );
 }
