@@ -16,7 +16,7 @@ export default function HomeScreen({navigation}) {
             onPress={() => {
                     navigation.navigate('SignUp')
                   }}></Button>
-      <Button title="Rewards"
+      <Button title="Login"
             onPress={() => {
                     navigation.navigate('Login')
                   }}></Button>

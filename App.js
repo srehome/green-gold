@@ -9,7 +9,7 @@ import SignUpScreen from './screens/SignUpScreen';
 import HomeScreen from './screens/HomeScreen';
 import RewardsScreen from './screens/RewardsScreen';
 import SettingsScreen from './screens/SettingsScreen';
-import LoginScreen from './screens/SettingsScreen';
+import LoginScreen from './screens/LoginScreen';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
