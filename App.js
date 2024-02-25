@@ -1,14 +1,69 @@
-import { StatusBar } from 'expo-status-bar';
+import * as React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-export default function App() {
+//import screens here
+import SignUpScreen from './screens/SignUpScreen';
+import HomeScreen from './screens/HomeScreen';
+import RewardsScreen from './screens/RewardsScreen';
+import SettingsScreen from './screens/SettingsScreen';
+
+const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
+
+function MyStack() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+    <Stack.Navigator>
+        <Stack.Screen
+            name="Home"
+            component={HomeScreen}
+        />
+        <Stack.Screen
+            name="SignUp"
+            component={SignUpScreen}
+        />
+        <Stack.Screen
+            name="Rewards"
+            component={RewardsScreen}
+        />
+        <Stack.Screen
+            name="Settings"
+            component={SettingsScreen}
+        />
+    </Stack.Navigator>
+);
 }
+
+function MyTabs() {
+  return (
+        <Tab.Navigator initialRouteName="Home">
+            <Tab.Screen
+                name="Home"
+                component={HomeScreen}
+            />
+            <Tab.Screen
+                name="Rewards"
+                component={RewardsScreen}
+            />
+            <Tab.Screen
+                name="Settings"
+                component={SettingsScreen}
+            />
+        </Tab.Navigator>
+);
+}
+
+const App = () => {
+  const [text, onChangeText] = React.useState('Search');
+
+  return (
+    <NavigationContainer>
+     <MyStack />
+   </NavigationContainer>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -18,3 +73,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+export default App;
