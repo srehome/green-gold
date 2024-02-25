@@ -3,10 +3,13 @@ import { useState } from 'react';
 import { StyleSheet, Text, View,Image,TextInput,TouchableOpacity } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
-export default function App() {
+export default function App({navigation}) {
   const [emailAddress, setEmailAddress ] = useState("");
   const [password,setPassword] = useState("")
 
+  const register = () => {
+    navigation.navigate('SignUpScreen')
+  }
   return (
     <View style={styles.container}>
       <LinearGradient
@@ -21,7 +24,6 @@ export default function App() {
 
       <TextInput style ={styles.inputControl}  placeholder ="johndoe@example.com" 
       placeholderTextColor= 'grey'
-      keyboardType="email-address"
       onChangeText={(value) =>setEmailAddress(value)} />
 
       <Text style ={styles.inputLabel}> Password </Text>
@@ -36,7 +38,10 @@ export default function App() {
       // handle onPress
     }}>
     <View style={styles.btn}>
-      <Text style={styles.btnText}>Sign in</Text>
+      <Text style={styles.btnText}>Login</Text>
+    </View>
+    <View style={styles.btn}>
+      <Text style={styles.btnText} onPress={register}>Register</Text>
     </View>
     </TouchableOpacity>
     </View>
