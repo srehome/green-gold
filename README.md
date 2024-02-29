@@ -38,7 +38,7 @@ npx react-native run-android
 We welcome contributions to the Green Gold App. If you're interested in helping improve our project, please take a look at our contributing guidelines. For major changes, please open an issue first to discuss what you would like to change.
 
 
-We would like to thank all our partners and everyone who has contributed to making the GreenPath App a reality. Together, we're making a significant impact on sustainability and waste management.
+We would like to thank all our partners and everyone who has contributed to making the Green Gold a reality. Together, we're making a significant impact on sustainability and waste management.
 
 
 
